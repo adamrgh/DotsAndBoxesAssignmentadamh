@@ -15,25 +15,25 @@ interface DotsAndBoxesGame {
      * a structure such as the [SparseMatrix] type for this. That allows for x/y access but iterating
      * will still skip those values that are not. Lines will also know what the neighboring boxes are.
      */
-    val lines: Iterable<Line>
+  //  val lines: Iterable<Line>
 
     /**
      * The second important bit is the boxes. They store information of the player that owns/won
      * that box. Boxes also know what dots they have and what lines are around them. For a rectangular
      * game the best type would be a [Matrix] / [ArrayMutableMatrix]
      */
-    val boxes: Iterable<Box>
+ //   val boxes: Iterable<Box>
 
     /**
      * The list of players for the game. A player is either a human or a computer player. The
      * game should automatically play computer players.
      */
-    val players: List<Player>
+    //val players: IntArray ;
     /**
      * The currently active player. Note that any implementation will need to change this as the
      * turns go, but the code accessing the game should not be able to change this directly.
      */
-    val currentPlayer: Player
+    //val currentPlayer: Player
 
     /**
      * Determines whether the game has finished. [getScores] can then be used to determine the winner
@@ -44,7 +44,7 @@ interface DotsAndBoxesGame {
      * The current scores for the game. This default implementation just loops through all boxes and
      * counts the boxes owned by each player, but other ways could work as well
      */
-    fun getScores(): IntArray = IntArray(players.size).also { s ->
+   /* fun getScores(): IntArray = IntArray(players.size).also { s ->
         for (box in boxes) {
             val owningPlayer = box.owningPlayer
             if (owningPlayer != null) {
@@ -53,7 +53,7 @@ interface DotsAndBoxesGame {
             }
         }
     }
-
+*/
     /**
      * Get the game to perform all computer turns it can. This means until the next human player,
      * or - if there are no human players - play the entire game

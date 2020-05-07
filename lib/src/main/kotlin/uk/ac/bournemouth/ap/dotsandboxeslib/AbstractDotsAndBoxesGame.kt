@@ -40,6 +40,7 @@ abstract class AbstractDotsAndBoxesGame: DotsAndBoxesGame {
      * Helper function that informs all listeners of the game state change.
      */
     fun fireGameChange() {
+
         for(listener in onGameChangeListeners) {
             listener.onGameChange(this)
         }
@@ -58,10 +59,10 @@ abstract class AbstractDotsAndBoxesGame: DotsAndBoxesGame {
     /**
      * Simple base class for [Line] implementations. There is no requirement to use this type at all.
      */
-    abstract inner class AbstractLine(val pos: Coordinate<Line>): Line {
+    /*abstract inner class AbstractLine(val pos: Coordinate<Line>): Line {
         constructor(lineX: Int, lineY: Int): this(Coordinate(lineX, lineY))
 
         final override val lineX: Int get() = pos.x
         final override val lineY: Int get() = pos.y
-    }
+    }*/
 }
